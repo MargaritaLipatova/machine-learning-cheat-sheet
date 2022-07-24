@@ -12,7 +12,7 @@ If the observations are also continuous, so $\vec{x}_i \in \mathbb{R}^D$, we may
 \begin{equation}\label{eqn:FA-class-conditional-density}
 p(\vec{x}_i|\vec{z}_i,\vec{\theta})=\mathcal{N}(\vec{x}_i|\vec{W}\vec{z}_i+\vec{\mu},\vec{\Psi})
 \end{equation}
-where \vec{W} is a $D \times L$ matrix, known as the \textbf{factor loading matrix}, and $\vec{\Psi}$ is a $D \times D$ covariance matrix. We take $\vec{\Psi}$ to be diagonal, since the whole point of the model is to “force” $\vec{z}_i$ to explain the correlation, rather than “baking it in” to the observation’s covariance. This overall model is called \textbf{factor analysis} or \textbf{FA}. The special case in which $\vec{\Psi}=\sigma^2\vec{I}$ is called \textbf{probabilistic principal components analysis} or \textbf{PPCA}. The reason for this name will become apparent later.
+where $\vec{W}$ is a $D \times L$ matrix, known as the \textbf{factor loading matrix}, and $\vec{\Psi}$ is a $D \times D$ covariance matrix. We take $\vec{\Psi}$ to be diagonal, since the whole point of the model is to “force” $\vec{z}_i$ to explain the correlation, rather than “baking it in” to the observation’s covariance. This overall model is called \textbf{factor analysis} or \textbf{FA}. The special case in which $\vec{\Psi}=\sigma^2\vec{I}$ is called \textbf{probabilistic principal components analysis} or \textbf{PPCA}. The reason for this name will become apparent later.
 
 
 \subsection{FA is a low rank parameterization of an MVN}
@@ -349,7 +349,7 @@ So far, the model is identical to factor analysis. However, we will use a differ
 \begin{equation}
 p(\vec{z}_t) =\prod\limits_{j=1}^L p_j(z_{tj})
 \end{equation}
-Without loss of generality, we can constrain the variance of the source distributions to be \vec{1}, because any other variance can be modelled by scaling the rows of $\vec{W}$ appropriately. The resulting model is known as \textbf{independent component analysis} or \textbf{ICA}.
+Without loss of generality, we can constrain the variance of the source distributions to be $\vec{1}$, because any other variance can be modelled by scaling the rows of $\vec{W}$ appropriately. The resulting model is known as \textbf{independent component analysis} or \textbf{ICA}.
 
 The reason the Gaussian distribution is disallowed as a source prior in ICA is that it does not permit unique recovery of the sources. This is because the PCA likelihood is invariant to any orthogonal transformation of the sources $\vec{z}_t$ and mixing matrix $\vec{W}$. PCA can recover the best linear subspace in which the signals lie, but cannot uniquely recover the signals themselves.
 

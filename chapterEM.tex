@@ -213,7 +213,7 @@ In summary, the EM algorithm's pseudo code is as follows
 	\While{(!convergency)} {
 	    // 2. E-step: plug in $P(\vec{x},\vec{z}|\vec{\theta})$, derive the formula of $Q(\vec{\theta}, \vec{\theta}^{t-1})$ \\
 	    $Q(\vec{\theta}, \vec{\theta}^{t-1})=\mathbb{E}\left[\ell_c(\vec{\theta})| \mathcal{D},\theta^{t-1}\right]$ \\
-	    // 3. M-step: find \vec{\theta} that maximizes the value of $Q(\vec{\theta}, \vec{\theta}^{t-1})$ \\
+	    // 3. M-step: find $\vec{\theta}$ that maximizes the value of $Q(\vec{\theta}, \vec{\theta}^{t-1})$ \\
 		$\vec{\theta}^t=\arg\max\limits_{\vec{\theta}} Q(\vec{\theta}, \vec{\theta}^{t-1})$ \\
 	}
 	
@@ -382,8 +382,8 @@ The intuition that spreading out the k initial cluster centers is a good thing i
 The exact algorithm is as follows:
 \begin{enumerate}
 \item Choose one center uniformly at random from among the data points.
-\item For each data point \vec{x}, compute $D(\vec{x})$, the distance between \vec{x} and the nearest center that has already been chosen.
-\item Choose one new data point at random as a new center, using a weighted probability distribution where a point \vec{x} is chosen with probability proportional to $D(\vec{x})^2$.
+\item For each data point $\vec{x}$, compute $D(\vec{x})$, the distance between $\vec{x}$ and the nearest center that has already been chosen.
+\item Choose one new data point at random as a new center, using a weighted probability distribution where a point $\vec{x}$ is chosen with probability proportional to $D(\vec{x})^2$.
 \item Repeat Steps 2 and 3 until $k$ centers have been chosen.
 \item Now that the initial centers have been chosen, proceed using standard k-means clustering.
 \end{enumerate}
